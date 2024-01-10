@@ -1,3 +1,6 @@
+# Implementation of a Dense Neural Network Classifier for classifying plant species based on
+# a set of features
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 import tensorflow as tf
 
