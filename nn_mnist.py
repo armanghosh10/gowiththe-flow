@@ -1,3 +1,5 @@
+# Implementation of a 3-layer Dense Neural Network for Image Classification 
+
 import tensorflow as tf
 from tensorflow import keras 
 import numpy as np 
@@ -16,6 +18,12 @@ train_images = train_images / 255.0
 test_images = test_images / 255.0
 
 #Defining the model architecture
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape=(28, 28)), #input layer (1)
+    keras.layers.Dense(128, activation='relu'), #hidden layer (2)
+    keras.layers.Dense(10, activation='softmax') #output layer (3)
+])
+
 model.compile(optimizer='adam', 
               loss='sparse_categorical_crossentropy', 
               metrics=['accuracy'])
